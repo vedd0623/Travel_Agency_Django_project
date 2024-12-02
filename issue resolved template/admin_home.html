@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<style>
+    body {
+        background-color: #f5f7fa; /* Light background for better contrast */
+    }
+
+    h1 {
+        font-size: 28px;
+        background-color: #007bff; /* Primary color for the header */
+        color: white;
+        padding: 15px;
+        margin: 20px 0;
+        font-family: 'Arial', sans-serif;
+        border-radius: 8px;
+        text-align: center; /* Centering the header text */
+    }
+
+    .container {
+        max-width: 1200px; /* Limit max width for better readability */
+        margin: auto;
+        padding: 20px;
+    }
+
+    .card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        margin: 15px; /* Spacing between cards */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Slight lift on hover */
+    }
+
+    .card-header {
+        background-color: #007bff; /* Consistent header color */
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .card-content {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .card-content h2 {
+        font-size: 40px; /* Larger font for numbers */
+        margin: 0;
+    }
+
+    .card-content h4 {
+        font-size: 20px;
+        margin-top: 10px; /* Space between number and label */
+        color: #555; /* Slightly darker text for contrast */
+    }
+
+    .row {
+        display: flex; /* Flexbox for responsiveness */
+        justify-content: center; /* Center align cards */
+        flex-wrap: wrap; /* Wrap cards to the next line if needed */
+    }
+</style>
+
+<h1>Admin Panel</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Total Destinations</h4>
+                </div>
+                <div class="card-content">
+                    <h2>{{ c }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Total Bookings</h4>
+                </div>
+                <div class="card-content">
+                    <h2>{{ b }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Total Users</h4>
+                </div>
+                <div class="card-content">
+                    <h2>{{ u }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
